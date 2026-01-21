@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Readymade Store</title>
+  <title>AL AMEERA Readymades</title>
   <style>
     * { box-sizing: border-box; font-family: Arial, sans-serif; }
     body { margin: 0; background: #f1f3f6; }
@@ -69,6 +69,7 @@
 </nav>
 
 <div class="container">
+  <button onclick="sendCart()" style="background:#25D366; color:white; border:none; padding:10px 16px; border-radius:6px; margin-bottom:15px;">Checkout via WhatsApp</button>
   <h2>Featured Products</h2>
   <div class="products">
     <div class="card">
@@ -111,6 +112,11 @@ function addToCart(name, price){
 }
 function openLogin(){ document.getElementById('loginModal').style.display='block'; }
 function closeLogin(){ document.getElementById('loginModal').style.display='none'; }
+function sendCart(){
+  if(cart.length===0){ alert('Cart is empty'); return; }
+  let msg='Hello, I want to order:%0A' + cart.join('%0A');
+  window.open('https://wa.me/919087154070?text=' + msg);
+}
 </script>
 </body>
 </html>
