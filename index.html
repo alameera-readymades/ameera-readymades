@@ -1,73 +1,82 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ameera Readymades</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #f7f7f7; color: #333; }
+    header { background: #111; color: #fff; padding: 15px 20px; }
+    nav { display: flex; justify-content: space-between; align-items: center; }
+    nav a { color: #fff; margin-left: 15px; text-decoration: none; }
+    .hero { background: #ddd; padding: 60px 20px; text-align: center; }
+    .hero h1 { font-size: 40px; margin-bottom: 10px; }
+    .section { padding: 40px 20px; max-width: 1100px; margin: auto; }
+    .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .card { background: #fff; padding: 20px; border-radius: 8px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .card img { width: 100%; height: 200px; background: #ccc; border-radius: 6px; }
+    .contact { background: #111; color: #fff; text-align: center; padding: 40px 20px; }
+    footer { background: #000; color: #aaa; text-align: center; padding: 10px; }
+    button { padding: 10px 20px; border: none; border-radius: 5px; background: #111; color: #fff; cursor: pointer; }
+  </style>
+</head>
+<body>
 
-export default function ClothingWebsite() {
-  return (
-    <div className="min-h-screen bg-gray-50 text-gray-800">
-      {/* Header */}
-      <header className="bg-white shadow-md">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold">Ameera Readymades</h1>
-          <nav className="space-x-6">
-            <a href="#home" className="hover:text-black">Home</a>
-            <a href="#products" className="hover:text-black">Products</a>
-            <a href="#about" className="hover:text-black">About</a>
-            <a href="#contact" className="hover:text-black">Contact</a>
-          </nav>
-        </div>
-      </header>
-
-      {/* Hero Section */}
-      <section id="home" className="bg-gradient-to-r from-gray-100 to-gray-200">
-        <div className="max-w-6xl mx-auto px-6 py-20 text-center">
-          <h2 className="text-4xl font-bold mb-4">Trendy & Quality Readymade Clothes</h2>
-          <p className="text-lg mb-6">Wholesale & Retail | Men • Women • Kids</p>
-          <Button className="rounded-2xl px-6 py-3">View Collection</Button>
-        </div>
-      </section>
-
-      {/* Products */}
-      <section id="products" className="max-w-6xl mx-auto px-6 py-16">
-        <h3 className="text-3xl font-semibold text-center mb-10">Our Products</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {["Men Wear", "Women Wear", "Kids Wear"].map((item) => (
-            <Card key={item} className="rounded-2xl shadow-sm">
-              <CardContent className="p-6 text-center">
-                <div className="h-40 bg-gray-200 rounded-xl mb-4" />
-                <h4 className="text-xl font-semibold mb-2">{item}</h4>
-                <p className="text-sm text-gray-600">Latest designs at best prices</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
-
-      {/* About */}
-      <section id="about" className="bg-white py-16">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h3 className="text-3xl font-semibold mb-4">About Us</h3>
-          <p className="text-gray-600">
-            Ameera Readymades is a trusted name in quality readymade garments. We provide
-            fashionable, comfortable, and affordable clothing for all age groups.
-          </p>
-        </div>
-      </section>
-
-      {/* Contact */}
-      <section id="contact" className="bg-gray-100 py-16">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h3 className="text-3xl font-semibold mb-4">Contact Us</h3>
-          <p className="mb-2">📍 Your Shop Address, City</p>
-          <p className="mb-2">📞 +91-XXXXXXXXXX</p>
-          <p className="mb-6">✉️ your@email.com</p>
-          <Button className="rounded-2xl">WhatsApp Now</Button>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-white py-4 text-center text-sm text-gray-500">
-        © {new Date().getFullYear()} Ameera Readymades. All rights reserved.
-      </footer>
+<header>
+  <nav>
+    <h2>Ameera Readymades</h2>
+    <div>
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
     </div>
-  );
-}
+  </nav>
+</header>
+
+<section id="home" class="hero">
+  <h1>Quality Readymade Clothing</h1>
+  <p>Men • Women • Kids</p>
+  <button>View Collection</button>
+</section>
+
+<section id="products" class="section">
+  <h2>Our Products</h2>
+  <div class="products">
+    <div class="card">
+      <img alt="Men Wear" />
+      <h3>Men Wear</h3>
+      <p>Shirts, T-Shirts, Jeans & more</p>
+    </div>
+    <div class="card">
+      <img alt="Women Wear" />
+      <h3>Women Wear</h3>
+      <p>Kurtis, Dresses, Tops & more</p>
+    </div>
+    <div class="card">
+      <img alt="Kids Wear" />
+      <h3>Kids Wear</h3>
+      <p>Comfortable & stylish kids clothing</p>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <h2>About Us</h2>
+  <p>Ameera Readymades provides fashionable and affordable readymade garments for all age groups. We focus on quality, comfort, and customer satisfaction.</p>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Contact Us</h2>
+  <p>📍 Your Shop Address</p>
+  <p>📞 +91-XXXXXXXXXX</p>
+  <p>✉️ your@email.com</p>
+</section>
+
+<footer>
+  <p>© 2026 Ameera Readymades. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
+
