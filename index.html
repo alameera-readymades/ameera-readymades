@@ -1,153 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>AL AMEERA | Textiles & Readymades</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
-  <!-- Algerian-style font -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+export default function ClothingWebsite() {
+  return (
+    <div className="min-h-screen bg-gray-50 text-gray-800">
+      {/* Header */}
+      <header className="bg-white shadow-md">
+        <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+          <h1 className="text-2xl font-bold">Ameera Readymades</h1>
+          <nav className="space-x-6">
+            <a href="#home" className="hover:text-black">Home</a>
+            <a href="#products" className="hover:text-black">Products</a>
+            <a href="#about" className="hover:text-black">About</a>
+            <a href="#contact" className="hover:text-black">Contact</a>
+          </nav>
+        </div>
+      </header>
 
-  <style>
-    .products {
-  text-align: center;
+      {/* Hero Section */}
+      <section id="home" className="bg-gradient-to-r from-gray-100 to-gray-200">
+        <div className="max-w-6xl mx-auto px-6 py-20 text-center">
+          <h2 className="text-4xl font-bold mb-4">Trendy & Quality Readymade Clothes</h2>
+          <p className="text-lg mb-6">Wholesale & Retail | Men • Women • Kids</p>
+          <Button className="rounded-2xl px-6 py-3">View Collection</Button>
+        </div>
+      </section>
+
+      {/* Products */}
+      <section id="products" className="max-w-6xl mx-auto px-6 py-16">
+        <h3 className="text-3xl font-semibold text-center mb-10">Our Products</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {["Men Wear", "Women Wear", "Kids Wear"].map((item) => (
+            <Card key={item} className="rounded-2xl shadow-sm">
+              <CardContent className="p-6 text-center">
+                <div className="h-40 bg-gray-200 rounded-xl mb-4" />
+                <h4 className="text-xl font-semibold mb-2">{item}</h4>
+                <p className="text-sm text-gray-600">Latest designs at best prices</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* About */}
+      <section id="about" className="bg-white py-16">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h3 className="text-3xl font-semibold mb-4">About Us</h3>
+          <p className="text-gray-600">
+            Ameera Readymades is a trusted name in quality readymade garments. We provide
+            fashionable, comfortable, and affordable clothing for all age groups.
+          </p>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="bg-gray-100 py-16">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h3 className="text-3xl font-semibold mb-4">Contact Us</h3>
+          <p className="mb-2">📍 Your Shop Address, City</p>
+          <p className="mb-2">📞 +91-XXXXXXXXXX</p>
+          <p className="mb-6">✉️ your@email.com</p>
+          <Button className="rounded-2xl">WhatsApp Now</Button>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-white py-4 text-center text-sm text-gray-500">
+        © {new Date().getFullYear()} Ameera Readymades. All rights reserved.
+      </footer>
+    </div>
+  );
 }
-
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.product-card {
-  padding: 20px;
-  border: 1px solid #1ecbff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(30,203,255,0.4);
-}
-
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0a0a0a;
-      color: #fff;
-    }
-
-    header {
-      text-align: center;
-      padding: 30px 20px;
-      background: #000;
-    }
-
-    .logo-text {
-      font-family: 'Cinzel Decorative', serif;
-      font-size: 48px;
-      letter-spacing: 4px;
-      color: #1ecbff;
-      text-shadow:
-        0 0 6px #1ecbff,
-        0 0 12px #00bfff,
-        0 0 24px #0099ff;
-      margin: 0;
-    }
-
-    .tagline {
-      margin-top: 10px;
-      font-size: 16px;
-      color: #ccc;
-      letter-spacing: 2px;
-    }
-
-    section {
-      padding: 30px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .hero {
-      text-align: center;
-    }
-
-    .hero p {
-      font-size: 18px;
-      color: #ddd;
-    }
-
-    .contact {
-      background: #111;
-      text-align: center;
-    }
-
-    .contact p {
-      margin: 8px 0;
-    }
-
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: #000;
-      font-size: 14px;
-      color: #aaa;
-    }
-
-    /* WhatsApp Button */
-    .whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25D366;
-      color: #fff;
-      padding: 14px 20px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-      z-index: 999;
-    }
-  </style>
-</head>
-
-<body>
-
-<header>
-  <h1 class="logo-text">AL AMEERA</h1>
-  <div class="tagline">TEXTILES & READYMADES</div>
-</header>
-
-<section class="hero">
-  <p>Quality readymade garments for men, women & kids.<br>
-     Fashionable • Affordable • Trusted</p>
-<section class="products">
-  <h2>Our Products</h2>
-
-  <div class="product-grid">
-    <div class="product-card">Men Readymade Shirts</div>
-    <div class="product-card">Women Dress Materials</div>
-    <div class="product-card">Kids Wear Collection</div>
-    <div class="product-card">Textiles & Sarees</div>
-  </div>
-</section>
-
-
-<section class="contact">
-  <h2>Contact Us</h2>
-  <p>📍 89, Thirunallar Road,<br>
-     Periya Pallivasal Commercial Complex,<br>
-     Karaikal – 609602</p>
-  <p>📞 +91 90871 54070</p>
-  <p>✉️ alameera4070@gmail.com</p>
-</section>
-
-<footer>
-  © 2026 AL AMEERA. All rights reserved.
-</footer>
-
-<a class="whatsapp"
-   href="https://wa.me/919087154070?text=Hello%20I%20want%20to%20order%20from%20AL%20AMEERA"
-   target="_blank">
-   💬 Order on WhatsApp
-</a>
-
-</body>
-</html>
